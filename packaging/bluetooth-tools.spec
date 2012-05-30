@@ -5,6 +5,7 @@ Release:    1
 Group:      TO_BE/FILLED_IN
 License:    TO BE FILLED IN
 Source0:    %{name}-%{version}.tar.gz
+Source1001: packaging/bluetooth-tools.manifest 
 BuildRequires:  cmake
 
 %description
@@ -15,6 +16,7 @@ Tools fo bluetooth run/stop and set address
 %setup -q
 
 %build
+cp %{SOURCE1001} .
 cmake . -DCMAKE_INSTALL_PREFIX=%{_prefix}
 make %{?jobs:-j%jobs}
 
@@ -29,6 +31,7 @@ ln -s %{_sysconfidr}/rc.d/init.d/bluetooth-address %{buildroot}%{_sysconfdir}/rc
 
 
 %files
+%manifest bluetooth-tools.manifest
 %defattr(-,root,root,-)
 %{_sysconfdir}/rc.d/init.d/bluetooth-address
 %{_sysconfdir}/rc.d/rc3.d/S60bluetooth-address
