@@ -15,16 +15,6 @@ fi
 # Execute BlueZ BT stack
 echo "Run bluetoothd"
 /usr/sbin/bluetoothd -d
-/usr/lib/obex/obexd -d --noplugin=syncevolution,pcsuite --symlinks -r /opt/media
 /usr/bin/bluetooth-share &
-sleep 2
 
 exit 0
-
-# Check result
-#if (dbus-send --system --print-reply --dest=org.bluez / org.bluez.Manager.DefaultAdapter | grep hci); then
-#	exit 0
-#else
-#	echo "Running BT stack is failed."
-#	exit 1
-#fi

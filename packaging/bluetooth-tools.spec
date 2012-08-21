@@ -1,6 +1,6 @@
 Name:       bluetooth-tools
 Summary:    bluetooth-tools
-Version:    0.1.0
+Version:    0.2.26
 Release:    1
 Group:      TO_BE/FILLED_IN
 License:    TO BE FILLED IN

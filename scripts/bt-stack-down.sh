@@ -14,6 +14,7 @@ killall bt-syspopup
 killall bluetooth-share
 killall bluetooth-pb-agent
 killall bluetooth-map-agent
+killall bluetooth-hfp-agent
 
 # result
 exit 0
