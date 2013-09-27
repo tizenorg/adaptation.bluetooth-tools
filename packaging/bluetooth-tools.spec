@@ -35,6 +35,8 @@ mkdir -p %{buildroot}%{_libdir}/systemd/system/multi-user.target.wants
 install -m 0644 %{SOURCE1001} %{buildroot}%{_libdir}/systemd/system/
 ln -s ../bluetooth-address.service %{buildroot}%{_libdir}/systemd/system/multi-user.target.wants/bluetooth-address.service
 
+mkdir -p %{buildroot}/usr/share/license
+cp LICENSE.APLv2 %{buildroot}/usr/share/license/%{name}
 
 %files
 %manifest bluetooth-tools.manifest
@@ -51,4 +53,4 @@ ln -s ../bluetooth-address.service %{buildroot}%{_libdir}/systemd/system/multi-u
 %attr(0755,-,-) %{_prefix}/etc/bluetooth/bt-edutm-off.sh
 %{_libdir}/systemd/system/multi-user.target.wants/bluetooth-address.service
 %{_libdir}/systemd/system/bluetooth-address.service
-
+/usr/share/license/%{name}
