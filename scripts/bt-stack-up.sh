@@ -12,9 +12,6 @@ if !(/usr/sbin/hciconfig | grep hci); then
 	exit 1
 fi
 
-# Execute BlueZ BT stack
-echo "Run bluetoothd"
-
 # We have to handle both systemd and sysvinit cases differently
 if [ -d /sys/fs/cgroup/systemd ]; then
    # bt-service changes USER to 'app' via libprivilege-control, so it needs
@@ -26,6 +23,9 @@ else
    /usr/sbin/bluetoothd -d
 fi
 
+# Execute BlueZ BT stack
+echo "Run bluetoothd"
+/usr/sbin/bluetoothd -d
 /usr/bin/bt-service &
 /usr/bin/bluetooth-share &
 

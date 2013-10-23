@@ -9,8 +9,7 @@ Source1001:	bluetooth-address.service
 BuildRequires:  cmake
 
 %description
-Tools fo bluetooth run/stop and set address
-
+Tools fo bluetooth run/stop
 
 %prep
 %setup -q
@@ -28,8 +27,6 @@ rm -rf %{buildroot}
 
 mkdir -p %{buildroot}%{_sysconfdir}/rc.d/rc3.d
 mkdir -p %{buildroot}%{_sysconfdir}/rc.d/rc5.d
-ln -s %{_sysconfdir}/rc.d/init.d/bluetooth-address %{buildroot}%{_sysconfdir}/rc.d/rc3.d/S60bluetooth-address
-ln -s %{_sysconfdir}/rc.d/init.d/bluetooth-address %{buildroot}%{_sysconfdir}/rc.d/rc5.d/S60bluetooth-address
 
 mkdir -p %{buildroot}%{_libdir}/systemd/system/multi-user.target.wants
 install -m 0644 %{SOURCE1001} %{buildroot}%{_libdir}/systemd/system/
@@ -41,9 +38,6 @@ cp LICENSE.APLv2 %{buildroot}/usr/share/license/%{name}
 %files
 %manifest bluetooth-tools.manifest
 %defattr(-,root,root,-)
-%{_sysconfdir}/rc.d/init.d/bluetooth-address
-%{_sysconfdir}/rc.d/rc3.d/S60bluetooth-address
-%{_sysconfdir}/rc.d/rc5.d/S60bluetooth-address
 %attr(0755,-,-) %{_prefix}/etc/bluetooth/bt-stack-up.sh
 %attr(0755,-,-) %{_prefix}/etc/bluetooth/bt-stack-down.sh
 %attr(0755,-,-) %{_prefix}/etc/bluetooth/bt-reset-env.sh

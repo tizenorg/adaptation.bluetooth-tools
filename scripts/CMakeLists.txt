@@ -9,5 +9,3 @@ INSTALL(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/bt-edutm-dev-up.sh DESTINATION etc/
 INSTALL(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/bt-edutm-mode-on.sh DESTINATION etc/bluetooth)
 INSTALL(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/bt-edutm-off.sh DESTINATION etc/bluetooth)
 
-# install booting script
-INSTALL(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/bluetooth-address DESTINATION /etc/rc.d/init.d)
