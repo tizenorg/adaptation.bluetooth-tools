@@ -26,7 +26,6 @@ fi
 # Execute BlueZ BT stack
 echo "Run bluetoothd"
 /usr/sbin/bluetoothd -d
-/usr/bin/bt-service &
 /usr/bin/bluetooth-share &
 
 exit 0
