@@ -8,7 +8,6 @@
 /usr/etc/bluetooth/bt-dev-end.sh
 
 # Kill BlueZ bluetooth stack
-killall bluetooth
 killall obexd obex-client
 killall bt-syspopup
 killall bluetooth-share
