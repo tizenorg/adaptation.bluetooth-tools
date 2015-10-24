@@ -4,18 +4,20 @@
 # Script for stopping Bluetooth stack
 #
 
+PGREP="/usr/bin/pgrep"
+
 # Remove BT device
 /usr/etc/bluetooth/bt-dev-end.sh
 
 # Kill BlueZ bluetooth stack
-killall bluetooth
-killall obexd obex-client
-killall bluetooth-share
-killall bluetooth-pb-agent
-killall bluetooth-map-agent
-killall bluetooth-hfp-agent
-killall bluetooth-hf-agent
-killall bluetoothd
+pid=`${PGREP} bt-syspopup`
+kill $pid
+pid=`${PGREP} bluetooth-hf`
+kill $pid
+pid=`${PGREP} bluetooth-ag`
+kill $pid
+pid=`${PGREP} bluetoothd`
+kill $pid
 
 # result
 exit 0

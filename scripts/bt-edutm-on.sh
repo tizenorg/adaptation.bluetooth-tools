@@ -5,7 +5,7 @@
 #
 
 HCIDUMP_ENABLE="true"	# Available values : true | false (default : false)
-HCIDUMP_DIR="/opt/usr/media/.bluetooth"
+HCIDUMP_DIR="/opt/usr/media/.bt_dump"
 HCIDUMP_FILENAME="bt_hcidump.log"
 HCIDUMP_PATH="${HCIDUMP_DIR}/${HCIDUMP_FILENAME}"
 LOGDUMP_DIR="/opt/etc/dump.d/module.d"

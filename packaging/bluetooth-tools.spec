@@ -24,8 +24,10 @@ export CFLAGS="$CFLAGS -DTIZEN_WEARABLE"
 %cmake \
 %if "%{?tizen_profile_name}" == "wearable"
         -DTIZEN_WEARABLE=YES \
-%elseif "%{?tizen_profile_name}" == "mobile"
+%else
+%if "%{?tizen_profile_name}" == "mobile" || "%{?tizen_profile_name}" == "tv"
         -DTIZEN_WEARABLE=NO \
+%endif
 %endif
 
 cmake . -DCMAKE_INSTALL_PREFIX=%{_prefix}
@@ -51,4 +53,5 @@ install -D -m 0644 LICENSE %{buildroot}%{_datadir}/license/bluetooth-tools
 %attr(0755,-,-) %{_prefix}/etc/bluetooth/bt-edutm-mode-on.sh
 %attr(0755,-,-) %{_prefix}/etc/bluetooth/bt-edutm-off.sh
 %attr(0755,-,-) %{_prefix}/etc/bluetooth/bt-hci-logdump.sh
+%attr(0755,-,-) %{_prefix}/etc/bluetooth/bt-run-hcidump.sh
 %{_datadir}/license/bluetooth-tools
